@@ -1,46 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Repaso</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Juego</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: hsl(0, 0%, 0%);
+      color: #f6f6f6;
+      font-family:'cursive', monospace;
+    }
+    h1 {
+      text-shadow: 2px 2px #fc0000;
+    }
+    .card {
+      background-color: #000000;
+      border: 2px solid #00ffcc;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #00ffcc;
+    }
+    .btn-custom {
+      background-color: #0501e9;
+      border: none;
+      color: #fdfdfd;
+      font-weight: bold;
+    }
+    .btn-custom:hover {
+      background-color: #4600a799;
+      color: #fff;
+    }
+    .btn-clear {
+      background-color: #ff0000;
+      border: none;
+      color: #fff;
+    }
+    .btn-clear:hover {
+      background-color: #f80303;
+    }
+    label {
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
-    <h1 class="p-5 bg-primary text-light text-center">Formulario de Contacto</h1>
-    <form class="container">
-        <h3 class="alert alert-warning text-center">Completa el formulario</h3>
-        <label>Nombre</label>
-        <input class="form-control" type="text" name="" id="">
+  <div class="container py-5">
+    <h1 class="text-center mb-4">Formulario Prueba</h1>
+    <div class="card p-4">
+      <form id="formGamer">
+        <label for="nombre">Nombre</label>
+        <input class="form-control" type="text" id="nombre" placeholder="Ingresa tu nombre" >
+        
 
-        <label>Email</label>
-        <input class="form-control" type="email" name="" id="">
+        <label for="email">Email</label>
+        <input class="form-control" type="email" id="email" placeholder="Ejemplo: jugador@email.com">
 
-        <label>Telefono</label>
-        <input class="form-control" type="tel" name="" id="">
-        <label>Estado Civil</label>
-        <select class="form-select">
-            <option disabled selected>Selecciona una Opción</option>
-            <option>Casado</option>
-            <option>Soltero</option>
-            <option>Separado</option>
-            <option>Viudo</option>
+        <label for="telefono">Telefono</label>
+        <input class="form-control" type="tel" id="telefono" placeholder="Ejemplo: 987654321">
+
+        <label for="estadoCivil">Estado Civil</label>
+        <select class="form-select" id="estadoCivil">
+          <option value="" disabled selected>Selecciona una opcion</option>
+          <option>Casado</option>
+          <option>Soltero</option>
+          <option>Separado</option>
+          <option>Viudo</option>
+          <option>Mandoneado</option>
         </select>
-        <label >Genero</label>
-        <div class="form-check">
-            <label class="form-check-label">Femenino</label>
-            <input class="form-check-input" type="radio" name="perro" id="">
+
+        <label for="comentario">Comentario</label>
+        <textarea class="form-control" id="comentario" rows="3" placeholder="Escribe tu Comentario"></textarea>
+
+        <div class="d-flex justify-content-between mt-4">
+          <input type="button" class="btn btn-custom" value="Guardar" onclick="validar()">
+          <input type="button" class="btn btn-clear" value="Limpiar" onclick="limpiar()">
         </div>
-        <div class="form-check">
-            <label class="form-check-label">Masculino</label>
-            <input class="form-check-input" type="radio" name="perro" id=""><br>
-        </div>
-        <label>Comentario</label>
-        <textarea class="form-control" name="" id=""></textarea>
-    
-        <input type="button" class="btn btn-primary" value="Guardar" onclick="validar()">
-    </form>
-    <script src="./main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+      </form>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
